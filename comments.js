@@ -1,14 +1,16 @@
+// Create web server
+// Create a web server that listens to port 3000. When you open the browser and go to http://localhost:3000, you should see the following message: "Welcome to the main page!"
+// Use the comments.js file to write the code for the server.
+
+// Import the 'http' module
 const http = require('http');
 
-const hostname = '127.0.0.1';
-const port = 3000;
-
+// Create a server object
 const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello, World!\n');
+  res.end('Welcome to the main page!');
 });
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+// Listen to the server on port 3000
+server.listen(3000, () => {
+  console.log('Server is running on port 3000');
 });
